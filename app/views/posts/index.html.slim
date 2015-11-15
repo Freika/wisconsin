@@ -1,3 +1,6 @@
+- if params[:controller].eql?('sources')
+  h1 = "Публикации #{@source.name}"
+
 table.table.table-hovered
   tbody
     - @posts.each do |post|
@@ -7,5 +10,7 @@ table.table.table-hovered
             => link_to "#{post.source.name}:", post.source, class: 'label label-default'
             => link_to post.title, go_post_path(post)
             = post.clicks
+            .pull-right
+              = post.created_at.strftime('%H:%m')
 
 = will_paginate @posts

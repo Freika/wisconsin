@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :sources
+  resources :sources, only: [:index, :show]
   resources :posts, only: :index do
     get :go, on: :member
   end

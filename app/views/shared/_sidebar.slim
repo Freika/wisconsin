@@ -1,1 +1,4 @@
 .well
+  ul
+    - @sources.each do |source|
+      li = link_to source.name, source

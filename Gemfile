@@ -14,6 +14,7 @@ gem 'slim-rails'
 gem 'feedjira'
 gem 'text'
 gem 'will_paginate', '~> 3.0.6'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug'

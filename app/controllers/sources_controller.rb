@@ -6,6 +6,8 @@ class SourcesController < ApplicationController
   end
 
   def show
+    @posts = @source.posts.paginate(page: params[:page], per_page: 50)
+    render template: 'posts/index'
   end
 
   def new
