@@ -1,0 +1,11 @@
+table.table.table-hovered
+  tbody
+    - @posts.each do |post|
+      tr
+        td
+          h5
+            => link_to "#{post.source.name}:", post.source, class: 'label label-default'
+            => link_to post.title, go_post_path(post)
+            = post.clicks
+
+= will_paginate @posts

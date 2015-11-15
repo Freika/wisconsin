@@ -1,0 +1,11 @@
+Post.all.each do |post|
+    Post.all.each do |post2|
+      similarity = white.similarity(post.title, post2.title)
+      puts similarity if similarity > 0.5
+      end
+      end
+
+
+Post.all.each do |first|
+  Post.all.each do |second|
+    puts first.title if first.title.include?(second.title)
