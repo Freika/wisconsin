@@ -1,11 +1,13 @@
-h1 Listing sources
+h1 Список источников новостей
 
-table
+table.table.table-bordered.table-hover
   thead
     tr
-      th Name
+      th Позиция
+      th Название
 
   tbody
-    - @sources.each do |source|
+    - @sources.each.with_index(1) do |source, index|
       tr
+        td = index
         td = link_to source.name, source

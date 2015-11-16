@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   before_action :set_all_sources
 
   def set_all_sources
-    @sources = Source.all
+    @sources = Source.all.order(clicks: :desc)
   end
 end

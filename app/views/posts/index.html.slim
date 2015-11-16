@@ -9,7 +9,8 @@ table.table.table-hovered
           h5
             => link_to "#{post.source.name}:", post.source, class: 'label label-default'
             => link_to post.title, go_post_path(post)
-            = post.clicks
+            span data-toggle="tooltip" data-placement="right" title="Количество переходов" = post.clicks
+
             .pull-right
               = post.created_at.strftime('%H:%m')
 

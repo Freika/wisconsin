@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   def go
     @post = Post.find(params[:id])
     @post.clicks += 1
-    @post.save
+    source = @post.source
+    source.clicks += 1
+    source.save
 
     redirect_to @post.url
   end

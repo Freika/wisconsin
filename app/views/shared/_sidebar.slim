@@ -1,4 +1,6 @@
 .well
   ul
     - @sources.each do |source|
-      li = link_to source.name, source
+      li
+        => link_to source.name, source
+        span data-toggle="tooltip" data-placement="right" title="Рейтинг" = source.clicks
