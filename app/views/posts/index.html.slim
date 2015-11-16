@@ -13,4 +13,14 @@ table.table.table-hovered
             .pull-right
               = post.created_at.strftime('%H:%m')
 
-= will_paginate @posts
+        - if @posts.where('id < ?', post.id).first
+          - prev_post = @posts.where('id < ?', post.id).first
+          - if prev_post.created_at.to_date == Time.zone.yesterday && post.created_at.to_date == Time.zone.today
+            tr
+              td
+                h2.text-center
+                  i.glyphicon.glyphicon-arrow-down
+                  = prev_post.created_at.to_date.strftime('%d.%m.%Y')
+                  i.glyphicon.glyphicon-arrow-down
+
+.text-center = will_paginate @posts, renderer: BootstrapPagination::Rails
