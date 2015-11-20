@@ -14,7 +14,7 @@
 # end
 #
 every 1.minute do
-  runner 'Source.all.each { |s| s.parse_feed }'
+  rake 'sources:update'
 end
 
 # Learn more: http://github.com/javan/whenever
