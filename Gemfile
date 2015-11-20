@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
+gem 'autoprefixer-rails'
 
 gem 'bootstrap-sass'
 gem 'simple_form'

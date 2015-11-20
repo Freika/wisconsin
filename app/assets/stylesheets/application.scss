@@ -16,3 +16,31 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+.posts {
+  list-style-type: none;
+
+  .post-content {
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+
+  .post {
+    display: block;
+    height: 40px;
+    // border-bottom: 1px solid green;
+    line-height: 40px;
+    padding-left: 20px;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+}

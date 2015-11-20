@@ -13,7 +13,7 @@
 #   rake "some:great:rake:task"
 # end
 #
-every 5.minutes do
+every 1.minute do
   runner 'Source.all.each { |s| s.parse_feed }'
 end
 

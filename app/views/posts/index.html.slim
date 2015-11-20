@@ -1,27 +1,37 @@
 - if params[:controller].eql?('sources')
   h1 = "Публикации #{@source.name}"
 
-table.table.table-hovered
-  tbody
-    - @posts.each do |post|
-      tr
-        td
-          h5
-            => link_to "#{post.source.name}:", post.source, class: 'label label-default'
-            => link_to post.title, go_post_path(post)
-            span data-toggle="tooltip" data-placement="right" title="Количество переходов" = post.clicks
+/ table.table.table-hovered
+/   tbody
+/     - @posts.each do |post|
+/       tr
+/         td
+/           h5
+/             span.label.label-default => post.source.name
+/             => link_to truncate(post.title, length: 70), go_post_path(post), data: { toggle: 'tooltip', placement: 'top' }, title: post.title
+/             span data-toggle="tooltip" data-placement="right" title="Количество переходов" = post.clicks
 
-            .pull-right
-              = post.created_at.strftime('%H:%m')
+/             .pull-right
+/               = post.created_at.strftime('%H:%M')
 
-        - if @posts.where('id < ?', post.id).first
-          - prev_post = @posts.where('id < ?', post.id).first
-          - if prev_post.created_at.to_date == Time.zone.yesterday && post.created_at.to_date == Time.zone.today
-            tr
-              td
-                h2.text-center
-                  i.glyphicon.glyphicon-arrow-down
-                  = prev_post.created_at.to_date.strftime('%d.%m.%Y')
-                  i.glyphicon.glyphicon-arrow-down
+/         - if @posts.where('id < ?', post.id).first
+/           - prev_post = @posts.where('id < ?', post.id).first
+/           - if prev_post.created_at.to_date == Time.zone.yesterday && post.created_at.to_date == Time.zone.today
+/             tr
+/               td
+/                 h2.text-center
+/                   i.glyphicon.glyphicon-arrow-down
+/                   = prev_post.created_at.to_date.strftime('%d.%m.%Y')
+/                   i.glyphicon.glyphicon-arrow-down
+
+ul.posts
+  - @posts.each do |post|
+    li
+      .text-center
+        .post-content
+          = link_to post.source.name, post.source, class: 'label label-default'
+          = link_to post.title, go_post_path(post), class: 'post'
+          = post.created_at.strftime('%H:%M')
+        .h3 * * *
 
 .text-center = will_paginate @posts, renderer: BootstrapPagination::Rails
