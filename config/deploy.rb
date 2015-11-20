@@ -10,7 +10,7 @@ require 'whenever/capistrano'
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 # set :whenever_command, 'bundle exec whenever'
 set :whenever_command, 'RAILS_ENV=prodiction rvm use 2.20 do bundle exec whenever'
-set :whenever_environment, defer { rails_env }
+# set :whenever_environment, defer { rails_env }
 
 
 namespace :deploy do
