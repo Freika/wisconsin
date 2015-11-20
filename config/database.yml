@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: wisconsin_production
-  username: wisconsin
+  username: deploy
   password: <%= ENV['WISCONSIN_DATABASE_PASSWORD'] %>

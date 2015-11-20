@@ -18,6 +18,7 @@ gem 'text'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 gem 'whenever', :require => false
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
