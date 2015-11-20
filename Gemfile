@@ -18,8 +18,10 @@ gem 'feedjira'
 gem 'text'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
-gem 'whenever', :require => false
+# gem 'whenever', :require => false
 gem 'figaro'
+gem 'crono'
+
 
 group :development, :test do
   gem 'byebug'
@@ -28,6 +30,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'capistrano-crono'
 end
 
 gem 'capistrano', '~> 3.1.0'

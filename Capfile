@@ -21,7 +21,8 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
-require "whenever/capistrano"
+# require "whenever/capistrano"
+require 'capistrano/crono'
 
 
 # If you are using rbenv add these lines:
@@ -33,6 +34,10 @@ require "whenever/capistrano"
 # require 'capistrano/rvm'
 set :rvm_type, :user
 set :rvm_ruby_version, '2.2.0p0'
+set :crono_pid, -> { File.join(shared_path, 'tmp', 'pids', 'crono.pid') }
+set :crono_env, -> { fetch(:rack_env, fetch(:rails_env, fetch(:stage))) }
+set :crono_log, -> { File.join(shared_path, 'log', 'crono.log') }
+set :crono_role, -> { :app }
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
