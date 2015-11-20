@@ -14,12 +14,12 @@ sources_ru = Source.create(
   ]
 )
 
-sources_en = Source.create(
-  [
-    { rss: 'http://eu.battle.net/d3/en/feed/news', language: 'en', name: '[Blizzard] Diablo 3', url: 'http://eu.battle.net/d3/en/' },
-    { rss: 'http://eu.battle.net/sc2/en/feed/news', language: 'en', name: '[Blizzard] StarCraft 2', url: 'http://eu.battle.net/sc2/en/' },
-    { rss: 'http://eu.battle.net/wow/en/feed/news', language: 'en', name: '[Blizzard] World of Warcraft', url: 'http://eu.battle.net/wow/en/' },
-    { rss: 'http://us.blizzard.com/en-us/news/rss.xml', language: 'en', name: 'Blizzard News', url: 'http://us.blizzard.com/en-us/' }
-  ]
-)
+# sources_en = Source.create(
+#   [
+#     { rss: 'http://eu.battle.net/d3/en/feed/news', language: 'en', name: '[Blizzard] Diablo 3', url: 'http://eu.battle.net/d3/en/' },
+#     { rss: 'http://eu.battle.net/sc2/en/feed/news', language: 'en', name: '[Blizzard] StarCraft 2', url: 'http://eu.battle.net/sc2/en/' },
+#     { rss: 'http://eu.battle.net/wow/en/feed/news', language: 'en', name: '[Blizzard] World of Warcraft', url: 'http://eu.battle.net/wow/en/' },
+#     { rss: 'http://us.blizzard.com/en-us/news/rss.xml', language: 'en', name: 'Blizzard News', url: 'http://us.blizzard.com/en-us/' }
+#   ]
+# )
 
