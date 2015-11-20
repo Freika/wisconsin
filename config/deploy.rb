@@ -8,8 +8,8 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 require 'whenever/capistrano'
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
-# set :whenever_command, 'bundle exec whenever'
-set :whenever_command, 'RAILS_ENV=prodiction rvm use 2.2.0 do bundle exec whenever'
+set :whenever_command, 'bundle exec whenever'
+# set :whenever_command, 'RAILS_ENV=production rvm use 2.2.0 do bundle exec whenever'
 # set :whenever_environment, defer { rails_env }
 
 
