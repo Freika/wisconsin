@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'autoprefixer-rails'
+gem 'therubyracer'
 
 gem 'bootstrap-sass'
 gem 'simple_form'
