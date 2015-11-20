@@ -6,6 +6,12 @@ set :deploy_to, '/home/deploy/wisconsin'
 set :linked_files, %w{config/database.yml config/secrets.yml config/application.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
+set :whenever_command, 'RAILS_ENV=prodiction rvm use 2.20 do bundle exec whenever'
+# set :whenever_command, 'bundle exec whenever'
+set :whenever_environment, defer { rails_env }
+
+require 'whenever/capistrano'
+
 namespace :deploy do
 
   desc 'Restart application'

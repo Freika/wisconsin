@@ -34,8 +34,5 @@ require "whenever/capistrano"
 set :rvm_type, :user
 set :rvm_ruby_version, '2.2.0p0'
 
-set :whenever_environment, defer { stage }
-set :whenever_command, 'RAILS_ENV=prodiction rvm use 2.20 do bundle exec whenever'
-
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
