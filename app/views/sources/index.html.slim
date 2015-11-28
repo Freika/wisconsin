@@ -10,4 +10,4 @@ table.table.table-bordered.table-hover
     - @sources.each.with_index(1) do |source, index|
       tr
         td = index
-        td = link_to source.name, source
+        td = link_to source.name, source, class: source.approved? ? 'text-success' : 'text-danger'
