@@ -7,7 +7,7 @@
 #
 class TestJob
   def perform
-    Source.all.each { |s| s.parse_feed }
+    Source.where(approved: true).each { |s| s.parse_feed }
   end
 end
 #

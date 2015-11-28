@@ -2,9 +2,9 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :url
-    = f.input :rss
+    = f.input :name, label: 'Название'
+    = f.input :url, label: 'Ссылка'
+    = f.input :rss, label: 'Ссылка на RSS'
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, 'Предложить ресурс'
