@@ -19,9 +19,6 @@ gem 'will_paginate-bootstrap'
 # gem 'whenever', :require => false
 gem 'figaro'
 gem 'crono'
-gem 'chef'
-gem 'knife-solo'
-gem 'berkshelf'
 
 group :development, :test do
   gem 'byebug'
@@ -31,6 +28,9 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'capistrano-crono'
+  gem 'chef'
+  gem 'knife-solo'
+  gem 'berkshelf'
 end
 
 gem 'capistrano', '~> 3.1.0'
