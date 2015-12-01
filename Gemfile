@@ -19,7 +19,9 @@ gem 'will_paginate-bootstrap'
 # gem 'whenever', :require => false
 gem 'figaro'
 gem 'crono'
-
+gem 'chef'
+gem 'knife-solo'
+gem 'berkshelf'
 
 group :development, :test do
   gem 'byebug'
