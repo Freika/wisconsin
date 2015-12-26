@@ -7,11 +7,11 @@ set :linked_files, %w{config/database.yml config/secrets.yml config/application.
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 require 'whenever/capistrano'
-set :whenever_environment, defer { stage }
+# set :whenever_environment, defer { stage }
 # set :whenever_identifier, defer { "#{application}_#{stage}" }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 set :whenever_command, "bundle exec whenever"
-set :whenever_variables, defer { "'environment=#{rails_env}&current_path=#{current_path}'" }
+# set :whenever_variables, defer { "'environment=#{rails_env}&current_path=#{current_path}'" }
 
 
 # set :crono_pid, -> { File.join(shared_path, 'tmp', 'pids', 'crono.pid') }
