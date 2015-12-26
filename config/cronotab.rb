@@ -5,11 +5,11 @@
 # You can use any class. The only requirement is that
 # class should have a method `perform` without arguments.
 #
-class TestJob
-  def perform
-    Source.where(approved: true).each { |s| s.parse_feed }
-  end
-end
+# class TestJob
+#   def perform
+#     Source.where(approved: true).each { |s| s.parse_feed }
+#   end
+# end
 #
-Crono.perform(TestJob).every 1.minute
+# Crono.perform(TestJob).every 1.minute
 #

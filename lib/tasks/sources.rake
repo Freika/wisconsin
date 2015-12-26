@@ -3,5 +3,4 @@ namespace :sources do
   task update: :environment do
     Source.all.each { |s| s.parse_feed }
   end
-
 end

@@ -13,7 +13,7 @@
 #   rake "some:great:rake:task"
 # end
 #
-every 1.minute do
+every 10.minutes do
   rake 'sources:update'
 end
 
