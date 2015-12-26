@@ -10,9 +10,14 @@ require 'whenever/capistrano'
 # set :whenever_environment, defer { stage }
 # set :whenever_identifier, defer { "#{application}_#{stage}" }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
-set :whenever_command, "bundle exec whenever"
+# set :whenever_command, "bundle exec whenever"
 # set :whenever_variables, defer { "'environment=#{rails_env}&current_path=#{current_path}'" }
 
+namespace :whenever do
+  task :start, :roles => :app do
+    run "cd #{release_path} && RAILS_ENV=production rvm use 2.2.0 bundle exec whenever --update-crontab"
+  end
+end
 
 # set :crono_pid, -> { File.join(shared_path, 'tmp', 'pids', 'crono.pid') }
 # set :crono_env, -> { fetch(:rack_env, fetch(:rails_env, fetch(:stage))) }
@@ -29,4 +34,5 @@ namespace :deploy do
 
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
+  after "finishing", "whenever:start"
 end
