@@ -6,7 +6,7 @@ set :deploy_to, '/home/deploy/wisconsin'
 set :linked_files, %w{config/database.yml config/secrets.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-set :whenever_environment, defer { stage }
+# set :whenever_environment, defer { stage }
 # set :whenever_identifier, defer { "#{application}_#{stage}" }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 set :whenever_command, "bundle exec whenever"
