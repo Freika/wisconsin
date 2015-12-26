@@ -13,6 +13,11 @@
 #   rake "some:great:rake:task"
 # end
 #
+
+job_type :rake, "{ cd #{@current_path} > /dev/null; } && RAILS_ENV=:environment bundle exec rake :task --silent :output"
+job_type :script, "{ cd #{@current_path} > /dev/null; } && RAILS_ENV=:environment bundle exec script/:task :output"
+job_type :runner, "{ cd #{@current_path} > /dev/null; } && RAILS_ENV=:environment bundle exec rails runner ':task' :output"
+
 every 10.minutes do
   rake 'sources:update'
 end
